@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composer Corner: Quiz</title>
+</head>
+<body>
+    <h1>Tell Us About Yourself!</h1>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="quiz.html">Quiz</a>
+    </div>
+    <form>
+        <!-- Example of nesting input in a label ("wrapped in a label")-->
+        <label>First name:
+            <input type="text" name="username" placeholder="Anonymous">
+        </label>
+        <label>Last name:
+            <input type="text" name="city" placeholder="Chicago">
+        </label>
+        <p>Who's your preferred composer?</p>
+        <!-- Example of labels as peers of inputs, using for/id to match -->
+        <input type="radio" name="composer" value="Bach" id="bach">
+        <label for="bach">Bach</label>
+        <input type="radio" name="composer" value="Mozart" id="mozart">
+        <label for="mozart">Mozart</label>
+        <input type="radio" name="composer" value="Beethoven" id="beethoven">
+        <label for="beethoven">Beethoven</label>
+        <input type="radio" name="composer" value="Brahms" id="brahms">
+        <label for="brahms">Brahms</label>
+        <input type="radio" name="composer" value="Schubert" id="schubert">
+        <label for="schubert">Schubert</label>     
+        <input type="radio" name="composer" value="Liszt" id="liszt">
+        <label for="liszt">Liszt</label>        
+        <input type="radio" name="composer" value="Stravinsky" id="stravinsky">
+        <label for="stravinsky">Stravinsky</label>        
+        <input type="radio" name="composer" value="Copland" id="copland">
+        <label for="copland">Copland</label>
+        <input type="radio" name="composer" value="Other" id="other">
+        <label for="other">Other</label>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+</body>
+</html>
