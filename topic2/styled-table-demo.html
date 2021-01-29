@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled table demo</title>
+    <style>
+        table {
+            border-collapse: collapse; /* see https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse */
+            width: 100%; 
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid black;
+        }
+
+        tr:nth-child(even) {
+            background-color: cornflowerblue;
+        }
+
+        tr:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Occupation</th>
+        </tr>
+        <tr>
+            <td>Robert</td>
+            <td>Caro</td>
+            <td>Biographer</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Hare</td>
+            <td>Philosopher</td>
+        </tr>
+        <tr>
+            <td>Carlos</td>
+            <td>Eire</td>
+            <td>Historian</td>
+        </tr>
+    </table>
+</body>
+</html>

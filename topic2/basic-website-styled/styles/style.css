@@ -1,0 +1,33 @@
+body { /* element selector */
+    font-family: sans-serif;
+}
+
+table { /* element selector */
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) { /* element selector with pseudoclass selector */
+    background-color: #ababab;
+}
+
+tr:hover { /* element selector with pseudoclass selector */
+    background-color: cornflowerblue;
+}
+
+/* Example: class selector */
+.centered {
+    text-align: center;
+}
+
+.clear-both {
+    clear: both;
+}
+
+/* Example: id selector */
+#left-floating-text {
+    float: left;
+}
+
+#rach-image {
+    float: right;
+}
