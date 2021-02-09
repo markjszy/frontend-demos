@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="mini-app">
+        <h1>Sign the guestbook!</h1>
+        <label for="name">Your name:</label>
+        <input id="nameEntry">
+        <button id="submit">Post</button>
+        <h2>Visitors:</h2>
+        <ul id="signers"></ul>
+    </div>
+    <script>
+        let nameEntry = document.getElementById('nameEntry');
+        let submitButton = document.getElementById('submit');
+        let signers = document.getElementById('signers');
+
+        submitButton.addEventListener('click', () => {
+            let nameValue = nameEntry.value;
+            let listElement = document.createElement('li');
+            listElement.innerHTML = nameValue;
+            signers.appendChild(listElement);
+            nameEntry.value = '';
+        });
+    </script>
+</body>
+</html>
