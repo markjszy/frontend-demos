@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="nameInput">
+        <button id="addName">Click me</button>
+    </div>
+    <script>
+        // Event delegation
+        document.addEventListener('click', (e) => {
+            console.log('heard a click on this element:');
+            console.log('event: ' + e);
+            console.log('target: ' + e.target);
+        });
+
+        // Adding listener on specific element
+        let myButton = document.getElementById('addName');
+        myButton.addEventListener('click', () => {
+            console.log('you clicked me!');
+        });
+
+        // Assign to event handler property
+        myButton.onclick = () => {
+            console.log('this is another listener talking about clicks...')
+        }
+    </script>
+</body>
+</html>
