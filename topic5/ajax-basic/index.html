@@ -6,6 +6,25 @@
     <title>jQuery basic demo</title>
 </head>
 <body>
+    <h1>Comparative Ajax Demos</h1>
+    <div id="classic">
+        <h2>Classic Ajax</h1>
+        <button id="getUserDataClassic">Get User Data (Vanilla JS)</button>
+        <div id="classicResults"></div>
+    </div>
+    <div id="jquery">
+        <h2>Ajax with jQuery</h2>
+        <button id="getUserDataJQuery">Get User Data (jQuery)</button>
+        <div id="jQueryGetResults"></div>
+        <button id="postUserDataJQuery">Post User Data (jQuery)</button>
+        <div id="jQueryPostResults"></div>
+    </div>
+    <div id="fetch">
+        <h2>Fetch API</h2>
+        <p>See (see <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">MDN Fetch API docs</a></p>
+        <button id="getUserDataFetch">Get User Data (Fetch API)</button>
+        <div id="fetchResults"></div>
+    </div>
     
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="app.js"></script>

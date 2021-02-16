@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery basic demo</title>
+    <style>
+        .app-demo {
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Here is a first header</h1>
+    <h1>Here is a second header</h1>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p> 
+    <button id="changeParagraphs">Change paragraph text!</button>
+    <button id="addElements">Add elements to app section</button>
+    <div class="content" id="appContainer">
+        <h2 class="app-demo">App Demo</h2>
+        <p class="app-demo">Basic application</p>
+    </div>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="app.js"></script>
 </body>
