@@ -4,6 +4,7 @@ const USERS_LIST_ENDPOINT = 'https://reqres.in/api/users'
 const USERS_UPDATE_ENDPOINT = 'https://reqres.in/api/users/2'
 
 // Vanilla JS Ajax Demo
+const classicResultsElmt = document.getElementById('classicResults');
 document.getElementById('getUserDataClassic')
         .addEventListener('click', () => {
             let httpRequest = new XMLHttpRequest();
@@ -14,9 +15,16 @@ document.getElementById('getUserDataClassic')
             httpRequest.onreadystatechange = () => {
                 if (httpRequest.readyState === XMLHttpRequest.DONE) {
                     if (httpRequest.status === 200) {
-                        $('#classicResults').text(httpRequest.responseText);
+                        // example of JSON.parse, needed since responseText is a stringified representation 
+                        // and not a ready-to-use JSON object
+                        let responseData = JSON.parse(httpRequest.responseText);
+                        responseData['data'].forEach(userName => {
+                            let listElmt = document.createElement('li');
+                            listElmt.innerHTML = `${userName.first_name} ${userName.last_name}`
+                            classicResultsElmt.appendChild(listElmt);
+                        });
                     } else {
-                        $('#classicResults').append('<h3>Error...</h3>');
+                        classicResultsElmt.append('<h3>Error...</h3>');
                         console.error(`Error was ${httpRequest.status}`);
                     }
                 }
@@ -27,20 +35,31 @@ document.getElementById('getUserDataClassic')
 
 
 // jQuery Ajax Demo
+const $jQueryGetResults = $('#jQueryGetResults');
 $('#getUserDataJQuery').on('click', () => {
     $.get(USERS_LIST_ENDPOINT, (data) => {
-        $('#jQueryGetResults').text(JSON.stringify(data));
+        // data is a ready-to-use JSON object
+        data['data'].forEach(userName => {
+            $jQueryGetResults.append(`<li>${userName.first_name} ${userName.last_name}`);
+        });
     });
 });
 
+const $jQueryPostResults = $('#jQueryPostResults');
+const mockDataToPost = {"name": "morpheus", "job": "leader"};
 $('#postUserDataJQuery').on('click', () => {
-    $.post(USERS_UPDATE_ENDPOINT, (data) => {
-        $('#jQueryPostResults').text(JSON.stringify(data));
+    // note the second arg to $.post here is data we are sending as part of POST request TO the server
+    $.post(USERS_UPDATE_ENDPOINT, mockDataToPost, (data) => {
+        // just dumping stringified JSON response data for illustrative purposes
+        $jQueryPostResults.text(JSON.stringify(data));
     });
 });
 
 // Vanilla JS with Fetch API demo
+const fetchResultsElmt = document.getElementById('fetchResults');
 document.getElementById('getUserDataFetch').addEventListener('click', () => {
     window.fetch(USERS_LIST_ENDPOINT).then(resp => 
-        resp.json()).then(data => $('#fetchResults').text(JSON.stringify(data)))
+        // note below we're just dumping out the stringified JSON object instead of 
+        // using it to create new elements as in examples above
+        resp.json()).then(data => fetchResultsElmt.innerHTML = JSON.stringify(data))
     })
