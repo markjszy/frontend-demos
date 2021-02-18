@@ -40,7 +40,7 @@ $('#getUserDataJQuery').on('click', () => {
     $.get(USERS_LIST_ENDPOINT, (data) => {
         // data is a ready-to-use JSON object
         data['data'].forEach(userName => {
-            $jQueryGetResults.append(`<li>${userName.first_name} ${userName.last_name}`);
+            $jQueryGetResults.append(`<li>${userName.first_name} ${userName.last_name}</li>`);
         });
     });
 });
