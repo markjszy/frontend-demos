@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Catalog</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="container">
+    <div class="row">
+        <div class="col">
+            <div id="new-author" class="jumbotron">
+                <h2>New Author</h2>
+                <div class="form-group">
+                    <label for="new-author-first-name">First name:</label>
+                    <input type="text" id="new-author-first-name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="new-author-last-name">Last name:</label> 
+                    <input type="text" id="new-author-last-name" class="form-control">
+                </div>                    
+                <div class="form-group">
+                    <label for="new-author-dob">Date of birth:</label>
+                    <input type="text" id="new-author-dob" class="form-control">
+                </div>
+                <button id="create-new-author" class="btn btn-primary form-control">Add Author</button> 
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div id="app"></div>
+        </div>
+    </div>
+    
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./models/Book.js"></script>
+    <script src="./models/Author.js"></script>
+    <script src="./services/AuthorService.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
