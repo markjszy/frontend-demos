@@ -1,0 +1,3 @@
+# Simplest CRUD app with array as repo store
+
+In this demo, we dispense with the idea of pretending that the backing array is some kind of persistence mechanism that requires us to deal with asynchronous behavior or anything of that sort. We still maintain the distinction between the *client's* view of state and the repo, even though we could get away with treating them as one and the same if we were to simplify this even further.
