@@ -85,14 +85,18 @@ class AuthorService {
 
     static deleteAuthor(id) {
         let indexToUpdate = AuthorService.getIdxForId(id);
-        authorRepo.splice(indexToUpdate, 1);
+        if (indexToUpdate != -1) {
+            authorRepo.splice(indexToUpdate, 1);
+        }
     }
 
     static deleteBook(authorId, bookId) {
         // first get the author entry
         let indexToUpdate = AuthorService.getIdxForId(authorId);
-        let authorToUpdate = authorRepo[indexToUpdate];
-        authorToUpdate.removeBook(bookId);
+        if (indexToUpdate != -1) {
+            let authorToUpdate = authorRepo[indexToUpdate];
+            authorToUpdate.removeBook(bookId);
+        }
     }
 }
 
