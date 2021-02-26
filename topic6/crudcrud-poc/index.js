@@ -30,9 +30,11 @@ $('#putResource').on('click', () => {
     }).then(results => {
         if (results.length) {
             let lastResult = results[results.length-1];
+            let lastResultId = lastResult._id;
             lastResult.name = 'Altered name!';
+            delete lastResult._id; // remove the _id from the JSON when we submit the PUT, else crudcrud will reject it!
             $.ajax({
-                url: `${baseUrl}/${lastResult._id}`,
+                url: `${baseUrl}/${lastResultId}`,
                 method: 'PUT',
                 datatype: 'json',
                 data: JSON.stringify(lastResult),
@@ -61,6 +63,6 @@ $('#deleteResource').on('click', () => {
             }).then(deleteResult => {
                 $('#deleteResults').html(`<code>${JSON.stringify(deleteResult)}</code>`);
             })
-        }
+        }   
     });
 });
